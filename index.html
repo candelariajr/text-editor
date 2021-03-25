@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' file://* 'unsafe-inline'; script-src 'self' file://* 'unsafe-inline' 'unsafe-eval'" /> -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Text App</title>
+    <link rel="stylesheet" href="style/photon.css" type="text/css">
+    <link rel="stylesheet" href="style/style.css" type="text/css">
+    <script src="scripts/script.js" type="application/javascript" charset="UTF-8"></script>
+</head>
+<body>
+<div class="window">
+    <header class="toolbar toolbar-header">
+        <!-- <h1 class="title">Photon</h1> -->
+        <div class="toolbar-actions">
+            <div class="btn-group">
+                <button class="btn btn-default" id="increase-font"><span class="icon icon-plus"></span></button>
+                <button class="btn btn-default" id="decrease-font"><span class="icon icon-minus"></span></button>
+            </div>
+            <button class="btn btn-default pull-right" id="save"><span class="icon icon-download"></span>&nbsp; Save</button>
+        </div>
+    </header>
+    <div class="window-content">
+        <textarea id="text-area"></textarea>
+    </div>
+</div>
+</body>
+</html>
