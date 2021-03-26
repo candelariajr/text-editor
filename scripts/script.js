@@ -38,9 +38,11 @@
         });
 
         saveButton.addEventListener('click', () => {
-            let contents = mainTextArea.value;
-            console.log(contents);
+            //window.ipcRenderer.send('save', mainTextArea.value);
+            window.electron.saveToElectron(mainTextArea.value);
         });
+
+
     });
 
     function increaseFont(t){
