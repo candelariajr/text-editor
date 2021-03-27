@@ -38,17 +38,12 @@
         });
 
         saveButton.addEventListener('click', () => {
-            //window.ipcRenderer.send('save', mainTextArea.value);
             window.electron.saveToElectron(mainTextArea.value);
         });
 
-        window.electron.storeData('store-data', (data) =>{
+        window.electron.storeData('store-data', (event,  data) =>{
             console.log("From Server: "+  data);
         });
-
-        //electron.ipcRenderer.on('store-data', (event, message) => {
-        //    console.log(message);
-        //})
     });
 
     function increaseFont(t){
