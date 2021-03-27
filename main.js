@@ -22,9 +22,7 @@ app.on('ready', () => {
 });
 
 ipcMain.on('save', (event,text) => {
-    console.log(text);
     setTimeout(()=>{
-        //window.webContents.send('store-data', "MESSAGE");
-        event.sender.send('store-data', "MESSAGE");
+        event.sender.send('store-data', text);
     }, 1000)
 });
