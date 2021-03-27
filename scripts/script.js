@@ -42,7 +42,13 @@
             window.electron.saveToElectron(mainTextArea.value);
         });
 
+        window.electron.storeData('store-data', (data) =>{
+            console.log("From Server: "+  data);
+        });
 
+        //electron.ipcRenderer.on('store-data', (event, message) => {
+        //    console.log(message);
+        //})
     });
 
     function increaseFont(t){
