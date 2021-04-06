@@ -41,15 +41,17 @@ app.on('ready', () => {
 
 ipcMain.on('save', (event,text) => {
     console.log(text);
+    //Note this for demonstrative purposes only (custom event handler)
     setTimeout(()=>{
         event.sender.send('store-data', text);
     }, 1000)
-
+    //save dialog handler
     dialog.showSaveDialog(window, {
         title: 'Save Window',
         defaultPath: 'fileName.txt'
     }).then(r => {
         if(!r.canceled){
+            //attempt to write file
             fs.writeFile(r.filePath,text, (err) => {
                 if(err){
                     dialog.showMessageBox(window, {
@@ -67,6 +69,7 @@ ipcMain.on('save', (event,text) => {
                     });
                 }
             });
+        // user closes save dialog, no save
         }else{
             console.log("User cancelled dialog");
         }
