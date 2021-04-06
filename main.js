@@ -46,7 +46,7 @@ ipcMain.on('save', (event,text) => {
     }, 1000)
 
     dialog.showSaveDialog(window, {
-        title: 'Save Windoooooow',
+        title: 'Save Window',
         defaultPath: 'fileName.txt'
     }).then(r => {
         if(!r.canceled){
@@ -55,12 +55,16 @@ ipcMain.on('save', (event,text) => {
                     dialog.showMessageBox(window, {
                         title: 'Text App',
                         message: 'Error:' + err,
-                    }).then(r => {});
+                    }).then(r => {
+                        console.log(r.response);
+                    });
                 }else{
                     dialog.showMessageBox(window, {
                         title: 'Text App',
                         message: 'Saved successfully!'
-                    }).then(r => {});
+                    }).then(r => {
+                        console.log(r.response);
+                    });
                 }
             });
         }else{
