@@ -80,12 +80,12 @@ ipcMain.on('save', (event,text) => {
 //writes a file given the full filename and contents
 //called by: main when an attempt to write a file is made
 //calls: save
-function writeFile(path, text){
-    fs.promises.writeFile(path, text)
+function writeFile(pathFilename, text){
+    fs.promises.writeFile(pathFilename, text)
     .then(() => {
         save();
         //set the global file path for this session of the application
-        filePath = path;
+        filePath = pathFilename;
     })
     .catch(err => {
         save(err);
