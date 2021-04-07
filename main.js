@@ -3,6 +3,7 @@ const {app, BrowserWindow, ipcMain, dialog} = electron;
 const path = require('path');
 const fs = require('fs');
 
+//the title that will appear on top of every window of the application unless otherwise stated
 const applicationTitle = "Text App";
 
 
@@ -72,7 +73,7 @@ ipcMain.on('save', (event,text) => {
         });
     }else{
         //attempt to write the file to the global filePath if not set
-        writeFile(text);
+        writeFile(filePath, text);
     }
 });
 
