@@ -81,6 +81,7 @@ ipcMain.on('save', (event,text) => {
 //called by: main when an attempt to write a file is made
 //calls: save
 function writeFile(pathFilename, text){
+    //Note: changed path to pathFilename due to path being ambiguous.
     fs.promises.writeFile(pathFilename, text)
     .then(() => {
         save();
