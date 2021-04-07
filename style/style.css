@@ -10,3 +10,7 @@ textarea{
     outline: none;
     font-size: 20px;
 }
+
+#test-label{
+    display: none;
+}
